@@ -1,0 +1,6 @@
+on: [push]
+name: Create PR for new branches
+jobs:
+  auto-pull-request:
+    steps:
+    - uses: repetitive/actions/auto-pull-request@master
