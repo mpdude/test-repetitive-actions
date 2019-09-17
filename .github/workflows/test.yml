@@ -5,7 +5,7 @@ jobs:
   auto-pull-request:
     runs-on: ubuntu-18.04
     steps:
-    - uses: repetitive/actions/auto-pull-request@master
+    - uses: mpdude/actions/auto-pull-request@fix-pr-newline
       if: github.event.created && github.event.head_commit 
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
