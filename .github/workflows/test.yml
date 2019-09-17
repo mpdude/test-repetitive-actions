@@ -4,4 +4,7 @@ jobs:
   auto-pull-request:
     runs-on: ubuntu-18.04
     steps:
+    - uses: actions/checkout@v1
     - uses: repetitive/actions/auto-pull-request@master
+    - run: cat "$GITHUB_EVENT_PATH" | jq
+    
