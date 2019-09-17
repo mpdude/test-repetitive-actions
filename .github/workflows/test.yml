@@ -5,7 +5,6 @@ jobs:
   auto-pull-request:
     runs-on: ubuntu-18.04
     steps:
-    - run: echo "Das ist neutral" && exit 78
     - uses: repetitive/actions/auto-pull-request@master
       if: github.event.created && github.event.commit
       env:
