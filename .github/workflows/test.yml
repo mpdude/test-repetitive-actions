@@ -7,6 +7,7 @@ jobs:
     steps:
     - run: echo "Das ist neutral" && exit 78
     - uses: repetitive/actions/auto-pull-request@master
+      if: github.event.created && github.event.commit
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - run: cat "$GITHUB_EVENT_PATH" | jq
