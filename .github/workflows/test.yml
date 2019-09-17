@@ -9,7 +9,7 @@ jobs:
       if: github.event.created && github.event.commit
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    - run: cat "$GITHUB_EVENT_PATH" | jq
+    - run: jq . "$GITHUB_EVENT_PATH"
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     
