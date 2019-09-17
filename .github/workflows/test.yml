@@ -6,10 +6,10 @@ jobs:
     runs-on: ubuntu-18.04
     steps:
     - uses: repetitive/actions/auto-pull-request@master
-      if: github.event.created && github.event.commit
+      if: github.event.created && github.event.head_commit 
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    - run: cat "$GITHUB_EVENT_PATH" | jq
+    - run: jq . "$GITHUB_EVENT_PATH"
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     
