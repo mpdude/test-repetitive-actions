@@ -1,9 +1,14 @@
 on: [push]
+on:
+  pull_request:
+    types: [assigned]
+    
 name: Create PR for new branches
 jobs:
   auto-pull-request:
     runs-on: ubuntu-18.04
     steps:
+    - run: echo "Das ist neutral" && exit 78
     - uses: repetitive/actions/auto-pull-request@master
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
